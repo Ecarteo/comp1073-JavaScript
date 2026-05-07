@@ -36,5 +36,4 @@
 		// STEP 5: Comment out the addEventListener above, and replace it with an onclick attribute typed directly into the EM element in the HTML - note that this is common, but it is considered to be bad practice - separate your HTML and your JS
 
 		// STEP 6: Move the above JavaScript into an external file and reference it with an empty SCRIPT element inside the HEAD element - be sure to add a defer attribute in the SCRIPT start tag
-
 		// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript
