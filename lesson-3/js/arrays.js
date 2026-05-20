@@ -2,6 +2,7 @@ const output = document.querySelector('body p:nth-of-type(2)');
 
 /* STEP 1: Creating an array
 When declaring and initializing an array, you can include strings, numbers, booleans, and even other arrays */
+let myArray = ["string ", true, 4123];
 
 /* STEP 2: Reading and changing array elements
 You can refer to a particular element in an array with it's index number */
