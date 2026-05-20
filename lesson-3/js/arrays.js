@@ -2,18 +2,35 @@ const output = document.querySelector('body p:nth-of-type(2)');
 
 /* STEP 1: Creating an array
 When declaring and initializing an array, you can include strings, numbers, booleans, and even other arrays */
+// let myArray = new Array;
+let myArray = ["string", true, 100, [5, "hello"]];
 
 /* STEP 2: Reading and changing array elements
 You can refer to a particular element in an array with it's index number */
+myArray[1] = false;
+myArray[3][0] = 6;
+output.textContent = `The 3rd element in the array is ${String(myArray[2])}, which is a ${typeof(myArray[2])}!`;
+// output.textContent = "The 3rd element in the array is " + String(myArray[2]) + ", which is a " + typeof(myArray[2]) + "!";
 
 // You can also change a particular element
-
+myArray[3][1] = true;
+console.log(`The 2nd element of the 4th element of the array is ${myArray[3][1]}.`);
 // An array within an array is called a multidimensional array - it can be accessed by specifying the index of the first array, then the item within it
 /* STEP 3: Determining array length
 Being able to figure out how many elements are contained in an array is a critical feature of JavaScript programming */
-
+output.textContent = `myArray has ${myArray[3].length} elements inside of it.`;
+output.textContent = "";
 // In particular, looping through arrays
-
+for (let i = 0; i < myArray.length; i ++) {
+    // Check to see if element is an array
+    if (Array.isArray(myArray[i])) {
+        for (let j = 0; j < myArray[i].length; j ++) {
+            output.textContent += `${myArray[i][j]}, `;
+        }
+    } else {
+        output.textContent += `${myArray[i]}, `;
+    }
+}
 /* STEP 4: Convert a string to an array
 If there is a common character that can act as a delimiter in a string, we can use this character to create an array */
 
