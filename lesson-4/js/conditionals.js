@@ -1,7 +1,16 @@
 const output = document.querySelector('body p:nth-of-type(2)');
 		
 /* STEP 1a: A simple if/else statement */
-let homeWorkDone = null;
+let homeWorkDone = "Not Done!";
+let breakDuration;
+
+if (homeWorkDone) {
+	breakDuration = 60;
+} else {
+	breakDuration = 10;
+}
+
+output.textContent = `I get ${breakDuration} minutes for a break!`;
 
 // STEP 1b: Any value that is not false, undefined, null, 0, NaN, or an empty string will evaluate to TRUE when tested using a conditional statement - try a few other values for var homeWorkDone and test
 
@@ -14,12 +23,25 @@ const weatherButton = document.querySelector('#weatherButton');
 const comments = document.querySelector('#commentary');
 
 /* STEP 2a: Add an event listener for the 'click' event on the 'Set Weather' button that invokes the setWeather() function below */
-
+weatherButton.addEventListener("click", setWeather);
 
 function setWeather() {
+	// console.log("Event listener works!");
 	let choice = select.value;
 	let temperature = temp.value;
+	// console.log(temperature);
 	/* STEP 2b: Craft an IF/ELSEIF/ELSE that changes the src attribute of the icon element to the appropriate .svg file in the images folder */
+	if (choice === "sunny") {
+		// icon.setAttribute("src", "images/sunny.svg");
+		icon.src = "images/sunny.svg";
+	} else if (choice === "rainy") {
+		icon.src = "images/rainy.svg";
+	} else if (choice === "windy") {
+		icon.src = "images/windy.svg";
+	} else {
+		icon.src = "images/cloud-off.svg";
+	}
+	setBackgroundColour(temperature);
 
 	/* STEP 3: Add a nested IF/ELSE statement inside the 'sunny' condition above that tests for temperature, and if it is equal to or greater than 15, turn the page background orange, otherwise turn it lightblue */
 
@@ -45,6 +67,15 @@ function setWeather() {
 	// Weather icons by Cole Bemis - https://feathericons.com/, MIT, https://commons.wikimedia.org/w/index.php?curid=60153354
 
 } // End of setWeather() function
+
+function setBackgroundColour(temperature) {
+	// Change screen colour based on temperature
+	if (temperature >= 15) {
+		page.style.backgroundColor = "orange"; // background-color in CSS
+	} else {
+		page.style.backgroundColor = "lightblue";
+	}
+}
 
 /* STEP 5: Switch statements
 Sometimes listing a series of conditions and the code that might be executed in each case is the friendliest way to structure your conditional */
