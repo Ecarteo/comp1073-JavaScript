@@ -24,6 +24,10 @@ body {
     border-radius: 8px;
 }
 
+.toy-section {
+    border-radius: 8px;
+}
+
 /* Left Side */
 #toy-container .toy-section:nth-child(1) {
     flex: 35; /* left book side */
@@ -54,9 +58,37 @@ body {
 /* Right Side */
 #toy-container .toy-section:nth-child(3) {
     flex: 35; /* right panel */
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
     background-color: #f8ec49;
 }
 
-.toy-section {
-    border-radius: 8px;
+.toy-choice-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.8vw;
+    padding: 16px;
+    padding-top: 3.8vw;
 }
+
+.toy-choice-buttons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toy-choice-buttons button {
+    width: 4.8vw;
+    height: 4.8vw;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.toy-choice-buttons div:nth-child(1) button { background-color: #3b82f6; }  /* blue */
+.toy-choice-buttons div:nth-child(2) button { background-color: #22c55e; }  /* green */
+.toy-choice-buttons div:nth-child(3) button { background-color: #a855f7; }  /* purple */
+.toy-choice-buttons div:nth-child(4) button { background-color: #f97316; }  /* orange */
+.toy-choice-buttons div:nth-child(5) button { background-color: #ec4899; }  /* pink */
