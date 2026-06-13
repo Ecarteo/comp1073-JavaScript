@@ -1,3 +1,10 @@
+/* Text Unselectable: https://www.w3schools.com/howto/howto_css_disable_text_selection.asp */
+p {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 /* DOM */
 * {
     margin: 0;
@@ -10,17 +17,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f3f4f5, #e4eeff);
 }
 
 /* Toy */
 #toy-container {
     display: flex;
     flex-direction: row;
-    width: 90vw;
-    max-height: 90vh;
+    width: 95vw;
+    max-height: 95vh;
     aspect-ratio: 800 / 500;
-    max-width: calc(90vh * 800 / 500);
+    max-width: calc(95vh * 800 / 500);
     border-radius: 8px;
     container-type: inline-size;
 }
@@ -34,8 +41,8 @@ body {
     flex: 35;
     display: flex;
     flex-direction: row;
-    padding: 1%;
-    gap: 0.5%;
+    padding: 0.5%;
+    gap: 0.4%;
     background-color: #fff025;
 }
 
@@ -44,11 +51,6 @@ body {
 .toy-choices:nth-child(3) { background-color: #FF7398; } /* green */
 .toy-choices:nth-child(4) { background-color: #ED2BAC; } /* orange */
 .toy-choices:nth-child(5) { background-color: #422C99; } /* pink */
-
-.toy-choices {
-    flex: 1;
-    border-radius: 8px;
-}
 
 /* IMAGES */
 .toy-choices {
@@ -64,9 +66,18 @@ body {
 .toy-choices-number {
     font-family: 'Comic Sans MS', cursive;
     font-weight: bold;
-    font-size: 2cqw;
+    font-size: 2.2cqw;
     color: black;
-    margin-top: 1cqw;
+    padding: 1.1cqw;
+    margin: 0.3cqw;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 3cqw;
+    height: 3cqw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5cqw, solid, white;
 }
 
 .toy-choices-item {
