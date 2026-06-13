@@ -33,22 +33,12 @@ function setNewChoice(buttonPressed, currentValue) {
 }
 
 function changeChoice(buttonPressed) {
-    switch(index) {
-        case 0:
-            setNewChoice(buttonPressed, choice1);
-            break;
-        case 1:
-            setNewChoice(buttonPressed, choice2);
-            break;
-        case 2:
-            setNewChoice(buttonPressed, choice3);
-            break;
-        case 3:
-            setNewChoice(buttonPressed, choice4);
-            break;
-        case 4:
-            setNewChoice(buttonPressed, choice5);
-            break;
+    switch(buttonPressed) {
+        case 0: setNewChoice(buttonPressed, choice1); break;
+        case 1: setNewChoice(buttonPressed, choice2); break;
+        case 2: setNewChoice(buttonPressed, choice3); break;
+        case 3: setNewChoice(buttonPressed, choice4); break;
+        case 4: setNewChoice(buttonPressed, choice5); break;
     }
 }
 
@@ -65,13 +55,14 @@ function playRandomStory() {
 // Plays chosen story
 function playChosenStory() {
     if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0)
-        ;
+        console.log("a");
     else
+        ; // display a message requesting choices
 }
 
 // Interactive Buttons Handler
 interactiveButtons.forEach((button, index) => {
-    interactiveButtons.addEventListener('click', () => {
+    button.addEventListener('click', () => {
         switch(index) {
             case 0: // SURPRISE BUTTON
                 playRandomStory()
@@ -85,23 +76,7 @@ interactiveButtons.forEach((button, index) => {
 
 // Choice Buttons Handler
 choiceButtons.forEach((button, index) => {
-    choiceButtons.addEventListener('click', () => {
-        switch(index) {
-            case 0:
-                runFunctions(index);
-                break;
-            case 1:
-                runFunctions(index);
-                break;
-            case 2:
-                runFunctions(index);
-                break;
-            case 3:
-                runFunctions(index);
-                break;
-            case 4:
-                runFunctions(index);
-                break;
-        }
+    button.addEventListener('click', () => {
+        runFunctions(index);
     });
 });
