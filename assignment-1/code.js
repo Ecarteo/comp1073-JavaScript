@@ -33,13 +33,20 @@ function setNewChoice(buttonPressed, currentValue) {
             return currentValue + 1;
 }
 
+function highlightChoice(columnIndex, itemIndex) {
+    const column = document.querySelectorAll('.toy-choices')[columnIndex];
+    const items = column.querySelectorAll('.toy-choices-item p');
+    items.forEach(p => p.style.color = 'black');
+    items[itemIndex - 1].style.color = 'white';
+}
+
 function changeChoice(buttonPressed) {
     switch(buttonPressed) {
-        case 0: choice1 = setNewChoice(buttonPressed, choice1); break;
-        case 1: choice2 = setNewChoice(buttonPressed, choice2); break;
-        case 2: choice3 = setNewChoice(buttonPressed, choice3); break;
-        case 3: choice4 = setNewChoice(buttonPressed, choice4); break;
-        case 4: choice5 = setNewChoice(buttonPressed, choice5); break;
+        case 0: choice1 = setNewChoice(buttonPressed, choice1); highlightChoice(buttonPressed, choice1); break;
+        case 1: choice2 = setNewChoice(buttonPressed, choice2); highlightChoice(buttonPressed, choice2); break;
+        case 2: choice3 = setNewChoice(buttonPressed, choice3); highlightChoice(buttonPressed, choice3); break;
+        case 3: choice4 = setNewChoice(buttonPressed, choice4); highlightChoice(buttonPressed, choice4); break;
+        case 4: choice5 = setNewChoice(buttonPressed, choice5); highlightChoice(buttonPressed, choice5); break;
     }
 }
 
