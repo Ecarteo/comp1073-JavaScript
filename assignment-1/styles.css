@@ -50,6 +50,48 @@ body {
     border-radius: 8px;
 }
 
+/* IMAGES */
+.toy-choices {
+    flex: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-evenly;
+}
+
+.toy-choices-number {
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    font-size: 2cqw;
+    color: black;
+    margin-top: 1cqw;
+}
+
+.toy-choices-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+}
+
+.toy-choices-item img {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.toy-choices-item p {
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    font-size: 1.2cqw;
+    text-align: center;
+    color: black;
+}
+
 /* Spine */
 #toy-container .toy-section:nth-child(2) {
     flex: 9;
@@ -102,7 +144,7 @@ body {
     margin: 1cqw;
     padding: 1cqw;
     font-size: 1.7cqw;
-    font-family: monospace;
+    font-family: 'Comic Sans MS', cursive;
     font-weight: bold;
     color: #000000;
     height: 8%;
