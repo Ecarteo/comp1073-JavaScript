@@ -34,11 +34,11 @@ function setNewChoice(buttonPressed, currentValue) {
 
 function changeChoice(buttonPressed) {
     switch(buttonPressed) {
-        case 0: choice1 = setNewChoice(buttonPressed, choice1); console.log("choice1:", choice1); break;
-        case 1: choice2 = setNewChoice(buttonPressed, choice2); console.log("choice2:", choice2); break;
-        case 2: choice3 = setNewChoice(buttonPressed, choice3); console.log("choice3:", choice3); break;
-        case 3: choice4 = setNewChoice(buttonPressed, choice4); console.log("choice4:", choice4); break;
-        case 4: choice5 = setNewChoice(buttonPressed, choice5); console.log("choice5:", choice5); break;
+        case 0: choice1 = setNewChoice(buttonPressed, choice1); break;
+        case 1: choice2 = setNewChoice(buttonPressed, choice2); break;
+        case 2: choice3 = setNewChoice(buttonPressed, choice3); break;
+        case 3: choice4 = setNewChoice(buttonPressed, choice4); break;
+        case 4: choice5 = setNewChoice(buttonPressed, choice5); break;
     }
 }
 
@@ -47,17 +47,23 @@ function runFunctions(buttonPressed) {
     changeChoice(buttonPressed);
 }
 
-// Plays a random story
-function playRandomStory() {
-    // to do
-}
-
-// Plays chosen story
+// Playback Button Handler
 function playChosenStory() {
     if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0)
-        console.log("a");
+        console.log(choices[0][choice1 - 1], choices[1][choice2 - 1], choices[2][choice3 - 1], choices[3][choice4 - 1], choices[4][choice5 - 1]);
     else
         ; // display a message requesting choices
+}
+
+// Surprise Button Handler
+function playRandomStory() {
+    for (let i = 0; i < 5; i++) { // code runs for each button
+        let randomTimes = Math.floor(Math.random() * 6) + 1; // randomizer
+        for (let j = 0; j < randomTimes; j++) {
+            runFunctions(i); // simulate random button clicks
+        }
+    }
+    playChosenStory(); // play the random story naturally
 }
 
 // Interactive Buttons Handler
