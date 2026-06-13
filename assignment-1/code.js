@@ -22,23 +22,23 @@ let choice5 = 0;
 function setNewChoice(buttonPressed, currentValue) {
     if (buttonPressed === 0 || buttonPressed === 3)
         if (currentValue > 6)
-            currentValue = 0;
+            return 1;
         else
-            currentValue = currentValue++;
+            return currentValue + 1;
     else
         if (currentValue > 5)
-            currentValue = 0;
+            return 1;
         else
-            currentValue = currentValue++;
+            return currentValue + 1;
 }
 
 function changeChoice(buttonPressed) {
     switch(buttonPressed) {
-        case 0: setNewChoice(buttonPressed, choice1); break;
-        case 1: setNewChoice(buttonPressed, choice2); break;
-        case 2: setNewChoice(buttonPressed, choice3); break;
-        case 3: setNewChoice(buttonPressed, choice4); break;
-        case 4: setNewChoice(buttonPressed, choice5); break;
+        case 0: choice1 = setNewChoice(buttonPressed, choice1); break;
+        case 1: choice2 = setNewChoice(buttonPressed, choice2); break;
+        case 2: choice3 = setNewChoice(buttonPressed, choice3); break;
+        case 3: choice4 = setNewChoice(buttonPressed, choice4); break;
+        case 4: choice5 = setNewChoice(buttonPressed, choice5); break;
     }
 }
 
