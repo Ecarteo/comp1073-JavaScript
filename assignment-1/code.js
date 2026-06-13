@@ -1,5 +1,6 @@
 // Global variables
-const buttons = document.querySelectorAll('.toy-choice-buttons button');
+const choiceButtons = document.querySelectorAll('.toy-choice-buttons button');
+const interactiveButtons = document.querySelectorAll('.toy-interactive-buttons');
 
 // Arrays
 const group1 = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]
@@ -19,7 +20,7 @@ let choice5 = 0;
 // Functions
 // This system allows the buttons to recycle through the options
 function setNewChoice(buttonPressed, currentValue) {
-    if (buttonPressed === 1 || buttonPressed === 4)
+    if (buttonPressed === 0 || buttonPressed === 3)
         if (currentValue > 6)
             currentValue = 0;
         else
@@ -51,27 +52,55 @@ function changeChoice(buttonPressed) {
     }
 }
 
+// Runs all neccesary functions for choice buttons to work
 function runFunctions(buttonPressed) {
     changeChoice(buttonPressed);
 }
 
-buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
+// Plays a random story
+function playRandomStory() {
+    // to do
+}
+
+// Plays chosen story
+function playChosenStory() {
+    if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0)
+        ;
+    else
+}
+
+// Interactive Buttons Handler
+interactiveButtons.forEach((button, index) => {
+    interactiveButtons.addEventListener('click', () => {
+        switch(index) {
+            case 0: // SURPRISE BUTTON
+                playRandomStory()
+                break;
+            case 1: // PLAYBACK BUTTON
+                playChosenStory()
+                break;
+        }
+    });
+});
+
+// Choice Buttons Handler
+choiceButtons.forEach((button, index) => {
+    choiceButtons.addEventListener('click', () => {
         switch(index) {
             case 0:
-                
+                runFunctions(index);
                 break;
             case 1:
-                
+                runFunctions(index);
                 break;
             case 2:
-                
+                runFunctions(index);
                 break;
             case 3:
-                
+                runFunctions(index);
                 break;
             case 4:
-                
+                runFunctions(index);
                 break;
         }
     });
