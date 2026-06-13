@@ -36,14 +36,14 @@ body {
     flex-direction: row;
     padding: 1%;
     gap: 0.5%;
-    background-color: #f8ec49;
+    background-color: #fff025;
 }
 
-.toy-choices:nth-child(1) { background-color: #9133a0; } /* purple */
-.toy-choices:nth-child(2) { background-color: #12b4ea; } /* blue */
-.toy-choices:nth-child(3) { background-color: #8ab90d; } /* green */
-.toy-choices:nth-child(4) { background-color: #e99405; } /* orange */
-.toy-choices:nth-child(5) { background-color: #e1338c; } /* pink */
+.toy-choices:nth-child(1) { background-color: #D63636; } /* purple */
+.toy-choices:nth-child(2) { background-color: #FA7500; } /* blue */
+.toy-choices:nth-child(3) { background-color: #FF7398; } /* green */
+.toy-choices:nth-child(4) { background-color: #ED2BAC; } /* orange */
+.toy-choices:nth-child(5) { background-color: #422C99; } /* pink */
 
 .toy-choices {
     flex: 1;
@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1%;
-    background-color: #f8ec49;
+    background-color: #fff025;
 }
 
 /* Top buttons */
@@ -89,23 +89,41 @@ body {
     cursor: pointer;
 }
 
-.toy-choice-buttons div:nth-child(1) button { background-color: #3b82f6; }  /* blue */
-.toy-choice-buttons div:nth-child(2) button { background-color: #22c55e; }  /* green */
-.toy-choice-buttons div:nth-child(3) button { background-color: #a855f7; }  /* purple */
-.toy-choice-buttons div:nth-child(4) button { background-color: #f97316; }  /* orange */
-.toy-choice-buttons div:nth-child(5) button { background-color: #ec4899; }  /* pink */
+.toy-choice-buttons div:nth-child(1) button { background-color: #D63636; }  /* blue */
+.toy-choice-buttons div:nth-child(2) button { background-color: #FA7500; }  /* green */
+.toy-choice-buttons div:nth-child(3) button { background-color: #FF7398; }  /* purple */
+.toy-choice-buttons div:nth-child(4) button { background-color: #ED2BAC; }  /* orange */
+.toy-choice-buttons div:nth-child(5) button { background-color: #422C99; }  /* pink */
 
 /* Display */
 .toy-choice-display {
     background-color: #828282;
-    border-radius: 4px;
-    margin: 1.5cqw;
+    border-radius: 8px;
+    margin: 1cqw;
     padding: 1cqw;
-    font-size: 1.5cqw;
+    font-size: 1.7cqw;
     font-family: monospace;
     color: #000000;
-    height: 10%;
+    height: 8%;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
+
+/* Sticker */
+.toy-drawing {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 1cqw;
+}
+
+.toy-drawing img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Bottom buttons */
