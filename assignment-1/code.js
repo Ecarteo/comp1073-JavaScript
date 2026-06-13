@@ -1,6 +1,7 @@
 // Global variables
 const choiceButtons = document.querySelectorAll('.toy-choice-buttons button');
 const interactiveButtons = document.querySelectorAll('.toy-interactive-buttons button');
+const displayedText = document.querySelector('.toy-choice-display p');
 
 // Arrays
 const group1 = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]
@@ -49,10 +50,12 @@ function runFunctions(buttonPressed) {
 
 // Playback Button Handler
 function playChosenStory() {
-    if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0)
-        console.log(choices[0][choice1 - 1], choices[1][choice2 - 1], choices[2][choice3 - 1], choices[3][choice4 - 1], choices[4][choice5 - 1]);
-    else
-        ; // display a message requesting choices
+    if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0) {
+        let story = `${choices[0][choice1 - 1]} ${choices[1][choice2 - 1]} ${choices[2][choice3 - 1]} ${choices[3][choice4 - 1]} ${choices[4][choice5 - 1]}`;
+        displayedText.textContent = story;
+    } else {
+        displayedText.textContent = "Press the buttons to choose your story.";
+    }
 }
 
 // Surprise Button Handler
