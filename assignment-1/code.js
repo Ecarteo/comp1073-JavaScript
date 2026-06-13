@@ -17,8 +17,28 @@ let choice4 = 0;
 let choice5 = 0;
 
 // Functions
-function changeChoice() {
+function changeChoice(buttonPressed) {
+    switch(index) {
+        case 0:
+            choice1 = 1;
+            break;
+        case 1:
+            choice2 = 2;
+            break;
+        case 2:
+            choice3 = 3;
+            break;
+        case 3:
+            choice4 = 4;
+            break;
+        case 4:
+            choice5 = 5;
+            break;
+    }
+}
 
+function runFunctions(buttonPressed) {
+    changeChoice(buttonPressed);
 }
 
 buttons.forEach((button, index) => {
