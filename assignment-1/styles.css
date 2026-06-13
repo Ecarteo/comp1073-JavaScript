@@ -1,3 +1,4 @@
+/* DOM */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
     background-color: #ffffff;
 }
 
+/* Toy */
 #toy-container {
     display: flex;
     flex-direction: row;
@@ -19,19 +21,42 @@ body {
     max-height: 90vh;
     aspect-ratio: 800 / 500;
     max-width: calc(90vh * 800 / 500);
-    background-color: #f8ec49;
     border-radius: 8px;
 }
 
+/* Left Side */
 #toy-container .toy-section:nth-child(1) {
     flex: 35; /* left book side */
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 4px;
+    background-color: #f8ec49;
 }
 
+.toy-choices:nth-child(1) { background-color: #9133a0; } /* purple */
+.toy-choices:nth-child(2) { background-color: #12b4ea; } /* blue */
+.toy-choices:nth-child(3) { background-color: #8ab90d; } /* green */
+.toy-choices:nth-child(4) { background-color: #e99405; } /* orange */
+.toy-choices:nth-child(5) { background-color: #e1338c; } /* pink */
+
+.toy-choices {
+    flex: 1;
+    border-radius: 8px;
+}
+
+/* Spine */
 #toy-container .toy-section:nth-child(2) {
-    flex: 10; /* spine */
+    flex: 9; /* spine */
     background-color: #5aabf5;
 }
 
+/* Right Side */
 #toy-container .toy-section:nth-child(3) {
     flex: 35; /* right panel */
+    background-color: #f8ec49;
+}
+
+.toy-section {
+    border-radius: 8px;
 }
