@@ -17,22 +17,36 @@ let choice4 = 0;
 let choice5 = 0;
 
 // Functions
+// This system allows the buttons to recycle through the options
+function setNewChoice(buttonPressed, currentValue) {
+    if (buttonPressed === 1 || buttonPressed === 4)
+        if (currentValue > 6)
+            currentValue = 0;
+        else
+            currentValue = currentValue++;
+    else
+        if (currentValue > 5)
+            currentValue = 0;
+        else
+            currentValue = currentValue++;
+}
+
 function changeChoice(buttonPressed) {
     switch(index) {
         case 0:
-            choice1 = 1;
+            setNewChoice(buttonPressed, choice1);
             break;
         case 1:
-            choice2 = 2;
+            setNewChoice(buttonPressed, choice2);
             break;
         case 2:
-            choice3 = 3;
+            setNewChoice(buttonPressed, choice3);
             break;
         case 3:
-            choice4 = 4;
+            setNewChoice(buttonPressed, choice4);
             break;
         case 4:
-            choice5 = 5;
+            setNewChoice(buttonPressed, choice5);
             break;
     }
 }
