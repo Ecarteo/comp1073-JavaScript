@@ -9,6 +9,18 @@ const group4 = ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"]
 const group5 = ["on the moon", "on the chair", "in my spaghetti", "in my soup", "on the grass", "in my shoes"]
 const choices = [group1, group2, group3, group4, group5];
 
+// Choices
+let choice1 = 0;
+let choice2 = 0;
+let choice3 = 0;
+let choice4 = 0;
+let choice5 = 0;
+
+// Functions
+function changeChoice() {
+
+}
+
 buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
         switch(index) {
