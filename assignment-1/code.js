@@ -50,11 +50,6 @@ function changeChoice(buttonPressed) {
     }
 }
 
-// Runs all neccesary functions for choice buttons to work
-function runFunctions(buttonPressed) {
-    changeChoice(buttonPressed);
-}
-
 // Playback Button Handler
 function playChosenStory() {
     if (choice1 !== 0 && choice2 !== 0 && choice3 !== 0 && choice4 !== 0 && choice5 !== 0) {
@@ -70,7 +65,7 @@ function playRandomStory() {
     for (let i = 0; i < 5; i++) { // code runs for each button
         let randomTimes = Math.floor(Math.random() * 6) + 1; // randomizer
         for (let j = 0; j < randomTimes; j++) {
-            runFunctions(i); // simulate random button clicks
+            changeChoice(i); // simulate random button clicks
         }
     }
     playChosenStory(); // play the random story naturally
@@ -93,6 +88,6 @@ interactiveButtons.forEach((button, index) => {
 // Choice Buttons Handler
 choiceButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-        runFunctions(index);
+        changeChoice(index);
     });
 });
