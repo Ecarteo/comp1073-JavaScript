@@ -1,6 +1,6 @@
 // Global variables
 const choiceButtons = document.querySelectorAll('.toy-choice-buttons button');
-const interactiveButtons = document.querySelectorAll('.toy-interactive-buttons');
+const interactiveButtons = document.querySelectorAll('.toy-interactive-buttons button');
 
 // Arrays
 const group1 = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]
@@ -34,11 +34,11 @@ function setNewChoice(buttonPressed, currentValue) {
 
 function changeChoice(buttonPressed) {
     switch(buttonPressed) {
-        case 0: choice1 = setNewChoice(buttonPressed, choice1); break;
-        case 1: choice2 = setNewChoice(buttonPressed, choice2); break;
-        case 2: choice3 = setNewChoice(buttonPressed, choice3); break;
-        case 3: choice4 = setNewChoice(buttonPressed, choice4); break;
-        case 4: choice5 = setNewChoice(buttonPressed, choice5); break;
+        case 0: choice1 = setNewChoice(buttonPressed, choice1); console.log("choice1:", choice1); break;
+        case 1: choice2 = setNewChoice(buttonPressed, choice2); console.log("choice2:", choice2); break;
+        case 2: choice3 = setNewChoice(buttonPressed, choice3); console.log("choice3:", choice3); break;
+        case 3: choice4 = setNewChoice(buttonPressed, choice4); console.log("choice4:", choice4); break;
+        case 4: choice5 = setNewChoice(buttonPressed, choice5); console.log("choice5:", choice5); break;
     }
 }
 
