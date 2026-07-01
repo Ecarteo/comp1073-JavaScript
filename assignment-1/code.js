@@ -18,6 +18,9 @@ let choice3 = 0;
 let choice4 = 0;
 let choice5 = 0;
 
+// asdfaslñdfsda
+adjfklasñdfj
+
 // Functions
 // This system allows the buttons to recycle through the options
 function setNewChoice(buttonPressed, currentValue) {
