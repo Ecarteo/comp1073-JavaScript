@@ -1,8 +1,21 @@
 const output = document.querySelector("#output");
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'Coffee' in the console */
+function coffee(size, isDecaf, qtyCream, qtySugar) {
+    this.size = size;
+    this.isDecaf = isDecaf;
+    this.qtyCream = qtyCream;
+    this.qtySugar = qtySugar;
+    this.decaf = this.isDecaf ? "decaffinated" : "caffinated"; /* if true first option, false otherwise */
 
+    this.description = function() {
+        // A small caffinated coffe with 1 cream and 2 sugar.
+        return `A ${this.size} ${this.decaf} coffe with ${qtySugar} cream and ${this.qtySugar} sugar.`;
+    }
+}
 /* STEP 2: Instatiate a coffee based on the above constructor function */
+let matthewCoffee = new coffee("large", false, 1, 0);
+output.textContent = matthewCoffee.description();
 
 /* STEP 3: Refresh the page, and in the console, begin to call a method on priyanshCoffee by typing 'priyanshCoffee.' - look at all the members and methods */
 
@@ -15,12 +28,18 @@ const output = document.querySelector("#output");
 /* STEP 5c: EVERYTHING is an object in JavaScript. Try accessing the prototype property of Coffee (which even though it is a constructor function it is still an object) with Coffee.prototype in the console. Then try Object.Prototype */
 
 /* STEP 6a: Let's circle back to create() - use priyanshCoffee to create a new object instance - one based on priyanshCoffee. */
+let robertCoffee = Object.create(matthewCoffee);
+robertCoffee.size = "medium";
+robertCoffee.isDecaf = true;
+robertCoffee.qtyCream = 0;
+robertCoffee.qtySugar = 1;
 
 /* STEP 6b: See how this new object inherits from the prototype with robertCoffee.__proto__ in the console. */
 
 /* STEP 7a: Each constructor function includes a prototype property with a value equal to an object that contains a constructor property. Try it out by typing priyanshCoffee.constructor and robertCoffee.constructor */
 
 /* STEP 7b: Since constructor is also a function, you can use it to create a new object instance - try it! */
+let meganCoffee = new robertCoffee.constructor("small", false, 2, 3);
 
 /* STEP 7c: Attempt via the console to access the new object's properties - meganCoffee.size, meganCoffee.isDecaf, etc. */
 

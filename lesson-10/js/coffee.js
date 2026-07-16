@@ -1,36 +1,107 @@
 const output = document.querySelector("#output");
 
 /* STEP 1: Instead of a constructor function, let's try a JavaScript class called 'Coffee' */
+class Coffee {
+    // variables - fields
+    size;
+    isDecaf;
 
-// add a serveIt method
+    // constructor
+    constructor(size, isDecaf) {
+        this.size = size;
+        this.isDecaf = isDecaf;
+    }
 
-// Generate an IMG of the coffee ordered
+    // functions - methods
+    // add a serveIt method
+    serveIt() {
+        // Generate an IMG of the coffee ordered
+        // <img>
+        let cup = document.createElement("img"); // <img>
 
-// Set the src path for the IMG element
+        // Set the src path for the IMG element
+        // <img src="images/coffee-cup.svg">
+        cup.setAttribute("src", "images/coffee-cup.svg");
 
-// Determine caffeine status of the coffee
+        // Determine caffeine status of the coffee
+        if(this.isDecaf) {
+            cup.setAttribute("src", "images/coffee-cup-green.svg") // <img src="images/cofee-cup-green.svg"
+        } else {
+            cup.setAttribute("src", "images/coffee-cup-purple.svg") // <img src="images/cofee-cup-purple.svg"
+        }
 
-// Set the size of the cup SVG image based on this.size
+        // Set the size of the cup SVG image based on this.size
+        switch (this.size) {
+            case "small":
+                cup.setAttribute("height", 100);
+                break;
+                // <img src="images/coffee-cup.svg" height=100>
+            case "medium":
+                cup.setAttribute("height", 150);
+                break;
+            case "large":
+                cup.setAttribute("height", 200);
+                break;
+            default: 
+                cup.setAttribute("height", 150);
+        }
 
-// Size the IMG in terms of its height based on above number from the switch
-
-// Generate a description of the coffee and put it into the IMG title attribute
-
-// Insert the new IMG element into the paragraph
+        // Generate a description of the coffee and put it into the IMG title attribute
+        cup.setAttribute("title", `This is a coffee.`)
+        // Insert the new IMG element into the paragraph
+        output.appendChild(cup);
+    }
+}
 
 /* STEP 2: Instatiate a coffee based on the above constructor function */
+let matthewCoffee = new Coffee("medium", false);
+let robertCoffee = new Coffee("large", true);
+let meganCoffee = new Coffee("small", false);
 
 /* STEP 3: Add a method to the Coffee class called serveIt() */
 
 /* STEP 4: Call up the serveIt() method */
+matthewCoffee.serveIt();
+robertCoffee.serveIt();
+meganCoffee.serveIt();
+
+// SUBCLASS EXERCISE: Mocha
 
 /* STEP 5: Define a subclass of the Coffee class */
+class Mocha extends Coffee {
+    // variables
+    shots;
+    syrup;
 
-/* STEP 6: Create a new instance of the Latte object */
+    // constructor
+    constructor(size, isDecaf, shots, syrup) {
+        super(size, isDecaf);
+        this.shots = shots;
+        this.syrup = syrup;
+    }
 
-/* STEP 7: Call up the latteDesc() method for the above created Latte instance */
+    // method
+    description() {
+        return `A ${this.size} Mocha with ${this.shots} shots and ${this.syrup} syrup.`;
+    }
+}
 
-/* STEP 8: Create yet another instance of Latte using the console, and try the latteDesc() method from the subclass, as well as the serveIt() method from the parent class */
+
+let matthewMocha = new Mocha("large", false, 2, "caramel");
+let sophiaMocha = new Mocha("small", true, 1, "vanilla");
+
+// run the method
+matthewMocha.serveIt();
+sophiaMocha.serveIt();
+
+// create DOM elements
+let matthewDescription = document.createElement("p");
+matthewDescription.textContent = matthewMocha.description();
+output.appendChild(matthewDescription);
+
+let sophiaDescription = document.createElement("p");
+sophiaDescription.textContent = sophiaMocha.description();
+output.appendChild(sophiaDescription);
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript
 
