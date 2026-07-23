@@ -7,7 +7,7 @@ async function populate(){
     // Introducing JavaScript Object Notation (JSON): https://json.org/
     // STEP 4a: Create i-scream.json file with companyName, headOffice, established, active, topFlavors(name, calories, type, ingredients, image) */
     // STEP 4b: Store the URL of a JSON file in a variable */
-    const url = "https://priyansht.github.io/26S-JavaScript-01-Week11/js/i-scream.json";
+    const url = "js/i-scream.json";
     // STEP 5: Use the new URL to create a new request object
     const request = new Request(url);
     // STEP 6: Make a network request with the fetch() function, which returns a Response object
@@ -43,6 +43,7 @@ function populateHeader(json){
 function showTopFlavours(json){
     // STEP 10c: Bind the JSON topFlavors object to a var
     let topFlavors = json.topFlavours;
+    
     // STEP 10d: Loop through the topFlavors object
     for (let i = 0; i < topFlavors.length; i++) {
         console.log(topFlavors[i]);
@@ -52,12 +53,14 @@ function showTopFlavours(json){
         let image = document.createElement("img"); // <img>
         let p1 = document.createElement("p"); // <p></p>
         let p2 = document.createElement("p"); // <p></p>
-        let list = document.createElement("ul"); // <ul><ul>
+        let p3 = document.createElement("p"); // <p></p> --> Added for the rating
+        let list = document.createElement("ul"); // <ul></ul>
 
-        // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
+        // STEP 10f: Set the textContent property based on JSON content
         h2.textContent = topFlavors[i].name;
         p1.textContent = "Calories: " + topFlavors[i].calories;
         p2.textContent = "Type: " + topFlavors[i].type;
+        p3.textContent = "Rating: " + topFlavors[i].rating + " / 5.0"; // Setting rating text
         image.setAttribute("src", topFlavors[i].image);
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
@@ -68,10 +71,11 @@ function showTopFlavours(json){
             list.appendChild(listItem);
         }
 
-        // STEP 10i: Append each complete ARTICLE element to the SECTION element
+        // STEP 10i: Append each complete element to the ARTICLE element
         article.appendChild(h2);
         article.appendChild(p1);
         article.appendChild(p2);
+        article.appendChild(p3); // Append rating to article
         article.appendChild(list);
         article.appendChild(image);
 
