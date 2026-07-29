@@ -37,20 +37,26 @@ const form = document.getElementById('pizza-form');
 const outputSection = document.getElementById('order-output');
 
 form.addEventListener('submit', function(event) {
-  // Prevent the default form submission (page reload)
-  event.preventDefault();
+    // Prevent the default form submission (page reload)
+    event.preventDefault();
 
-  // Capture the selected size (radio button)
-  const size = document.querySelector('input[name="size"]:checked').value;
+    // Capture the selected size (radio button)
+    const size = document.querySelector('input[name="size"]:checked').value;
 
-  // Capture the selected crust (dropdown)
-  const crust = document.getElementById('crust').value;
+    // Capture the selected crust (dropdown)
+    const crust = document.getElementById('crust').value;
 
-  // Capture all selected checkboxes and map them to an array of their values
-  const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(cb => cb.value);
-  const drinks = Array.from(document.querySelectorAll('input[name="drinks"]:checked')).map(cb => cb.value);
-  const dips = Array.from(document.querySelectorAll('input[name="dips"]:checked')).map(cb => cb.value);
+    // Capture all selected checkboxes and map them to an array of their values
+    const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(cb => cb.value);
+    const drinks = Array.from(document.querySelectorAll('input[name="drinks"]:checked')).map(cb => cb.value);
+    const dips = Array.from(document.querySelectorAll('input[name="dips"]:checked')).map(cb => cb.value);
 
-  // Capture special instructions (textarea)
-  const instructions = document.getElementById('instructions').value;
+    // Capture special instructions (textarea)
+    const instructions = document.getElementById('instructions').value;
+
+    // Instantiate a new Pizza object with the captured values
+    const customerOrder = new Pizza(size, crust, toppings, drinks, dips, instructions);
+
+    // Output the description to the page using the object's method
+    outputSection.innerHTML = `<h2>Order Summary</h2><p>${customerOrder.getOrderDescription()}</p>`;
 });
