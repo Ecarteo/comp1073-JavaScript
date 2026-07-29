@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Maker - Matthew Calderon</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/code.js" defer></script>
 </head>
 <body>
-    
+    <header>
+      <h1>Pizza Order System</h1>
+      <!-- JavaScript will dynamically add the student ID and name here -->
+      <div id="student-info"></div>
+    </header>
+
+    <main>
+      <form id="pizza-form">
+        <fieldset>
+          <legend>Choose Size</legend>
+          <label><input type="radio" name="size" value="Small" required> Small</label>
+          <label><input type="radio" name="size" value="Medium"> Medium</label>
+          <label><input type="radio" name="size" value="Large"> Large</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Choose Crust</legend>
+          <select name="crust" id="crust" required>
+            <option value="">Select crust type...</option>
+            <option value="Thin">Thin Crust</option>
+            <option value="Hand-Tossed">Hand-Tossed</option>
+            <option value="Deep Dish">Deep Dish</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Toppings (Select all that apply)</legend>
+          <label><input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni</label>
+          <label><input type="checkbox" name="toppings" value="Mushrooms"> Mushrooms</label>
+          <label><input type="checkbox" name="toppings" value="Onions"> Onions</label>
+          <label><input type="checkbox" name="toppings" value="Sausage"> Sausage</label>
+          <label><input type="checkbox" name="toppings" value="Bacon"> Bacon</label>
+          <label><input type="checkbox" name="toppings" value="Green Peppers"> Green Peppers</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Drinks</legend>
+          <label><input type="checkbox" name="drinks" value="Cola"> Cola</label>
+          <label><input type="checkbox" name="drinks" value="Diet Cola"> Diet Cola</label>
+          <label><input type="checkbox" name="drinks" value="Ginger Ale"> Ginger Ale</label>
+          <label><input type="checkbox" name="drinks" value="Bottled Water"> Bottled Water</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dips</legend>
+          <label><input type="checkbox" name="dips" value="Creamy Garlic"> Creamy Garlic</label>
+          <label><input type="checkbox" name="dips" value="Ranch"> Ranch</label>
+          <label><input type="checkbox" name="dips" value="Marinara"> Marinara</label>
+          <label><input type="checkbox" name="dips" value="Hot Sauce"> Hot Sauce</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Delivery Instructions</legend>
+          <textarea name="instructions" id="instructions" rows="3" cols="30" placeholder="Any special requests?"></textarea>
+        </fieldset>
+
+        <button type="submit" id="order-btn">Order Pizza</button>
+      </form>
+
+      <section id="order-output">
+        <!-- JavaScript will output the final pizza description here -->
+      </section>
+    </main>
+  </body>
 </body>
 </html>
