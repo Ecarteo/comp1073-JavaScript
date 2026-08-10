@@ -6,6 +6,9 @@ document.getElementById("student-info").textContent = studentInfo;
 
 // jikan.api calls
 
+// delay function in milliseconds
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 // fetch top 200 popular anime
 async function fetchPopularAnime() {
     let topAnimeList = [];
@@ -13,8 +16,11 @@ async function fetchPopularAnime() {
     // fetch pages 1 to 8 (25 items per page = 200 total)
     for (let page = 1; page <= 8; page++) {
         try {
+            console.log(`Fetching page ${page}...`);
+
             // filter=bypopularity sorts by most members/popularity rank
-            const response = await fetch(`https://api.jikan.moe/v4/top/anime?filter=bypopularity&page=${page}`);
+            const url = `https://api.jikan.moe/v4/top/anime?filter=bypopularity&page=${page}`;
+            const response = await fetch(url);
 
             if (!response.ok) {
                 console.error(`Page ${page} failed: HTTP ${response.status}`);
@@ -27,15 +33,16 @@ async function fetchPopularAnime() {
                 topAnimeList.push(...result.data);
             }
         } catch (error) {
-            // catch network errors
             console.error(`Page ${page} threw an error:`, error);
         }
 
-        // pause briefly between calls to not hit Jikan's rate limit
-        await new Promise(resolve => setTimeout(resolve, 400));
+        console.log("Loaded anime count:", topAnimeList.length);
+        // 1 second delay between calls to avoid Jikan's rate limit
+        await sleep(1000);
     }
 
-    return topAnimeList.slice(0, 200);
+    console.log("Loaded anime count:", topAnimeList.length);
+    return topAnimeList;
 }
 
 console.log(fetchPopularAnime());
