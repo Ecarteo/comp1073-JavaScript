@@ -49,8 +49,11 @@ main {
     flex-direction: column;
     gap: 0.5rem;
     width: 300px;
+    /* round corners */
     border-radius: 10px;
     overflow: hidden;
+    /* show cursor */
+    cursor: pointer;
 }
 
 .anime-card img {
@@ -66,11 +69,28 @@ main {
     padding: 0;
 }
 
+/* DIALOG / MODAL */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* Darkens background when modal opens */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
 /* FOOTER */
 footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
     text-align: center;
+    max-width: 80rem;
     height: 8rem;
 }
