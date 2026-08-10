@@ -65,9 +65,11 @@ function createGridElements(animeList) {
 
         animeCard.innerHTML = `
             <img src="${imageUrl}" alt="${titleEnglish}">
-            <h2>${titleJapanese}</h2>
-            <h3>${titleEnglish}</h3>
-            <p><strong>Studio:</strong> ${studio}</p>
+            <div class="card-content">
+                <h2>${titleJapanese}</h2>
+                <h3>${titleEnglish}</h3>
+                <p><strong>Studio:</strong> ${studio}</p>
+            </div>
         `;
 
         // click event to open dialog with additional API properties
