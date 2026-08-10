@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.anime-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Uses gap to space out the text elements */
+    width: 250px; /* Locked to exactly 250px for now */
+    border: 1px solid #ccc; /* Just to see the card boundaries */
+}
+
+.anime-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Keeps the vertical aspect ratio locked */
+    object-fit: cover;
+}
+
+.anime-card h3, 
+.anime-card h4, 
+.anime-card p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ccc;
+}
