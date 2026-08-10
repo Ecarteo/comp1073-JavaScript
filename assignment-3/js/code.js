@@ -6,11 +6,6 @@ document.getElementById("student-info").textContent = studentInfo;
 
 // modal references
 const modal = document.getElementById("anime-modal");
-const modalContent = document.getElementById("modal-content");
-const closeModalBtn = document.getElementById("close-modal");
-
-// close modal events
-closeModalBtn.addEventListener("click", () => modal.close());
 
 // close if user clicks on the dark backdrop area
 modal.addEventListener("click", (event) => {
@@ -38,7 +33,6 @@ async function getSeasonalAnime() {
 // create DOM elements
 function createGridElements(animeList) {
     const gridContainer = document.querySelector('main');
-    gridContainer.innerHTML = ''; // Clear existing elements
 
     // filter out duplicates by tracking seen mal_ids
     const seenIds = new Set();
@@ -81,8 +75,9 @@ function createGridElements(animeList) {
             const source = anime.source || 'N/A';
             const duration = anime.duration || 'N/A';
             const aired = anime.aired.string || 'N/A';
+            const malLink = anime.url || 'N/A';
 
-            modalContent.innerHTML = `
+            modal.innerHTML = `
                 <div class="modal-layout">
                     <div class="modal-details">
                         <h2>${titleEnglish}<br>(${titleJapanese})</h2>
@@ -93,6 +88,7 @@ function createGridElements(animeList) {
                         <p><strong>Source:</strong> ${source}</p>
                         <p><strong>Duration:</strong> ${duration}</p>
                         <p><strong>Aired:</strong> ${aired}</p>
+                        <a href="${malLink}" target="_blank" rel="noopener noreferrer"><strong>Go to MyAnimeList page<a>
                     </div>
                     <img class="modal-thumbnail" src="${imageUrl}" alt="${titleEnglish}">
                 </div>
