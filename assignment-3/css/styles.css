@@ -1,3 +1,12 @@
+/* COLOURS PALETTE */
+:root {
+  --color-black: #0A0908;
+  --color-jet-black: #22333B;
+  --color-almond-cream: #EAE0D5;
+  --color-khaki-beige: #C6AC8F;
+  --color-stone-brown: #5E503F;
+}
+
 /* PAGE BEHAVIOUR */
 html, body, h1, h2, h3, h4, p, ul { margin: 0; }
 
@@ -7,15 +16,21 @@ body {
     align-items: center;
     font-family: "Noto Sans Display", sans-serif;
     font-size: 1.2rem;
+    background-color: var(--color-almond-cream);
 }
 
-header, main, footer {
-    width: 100%;
-}
+header, main, footer { width: 100%; }
 
 ul {
     list-style: none;
     padding: 0;
+}
+
+a { color: inherit; }
+
+h1 {
+    font-size: 4.5rem;
+    color: var(--color-almond-cream);
 }
 
 /* HEADER */
@@ -23,8 +38,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10rem;
+    height: 12rem;
     text-align: center;
+    background-color: var(--color-jet-black);
 }
 
 /* MAIN */
@@ -32,6 +48,7 @@ main {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-top: 3rem;
 }
 
 .anime-list {
@@ -42,6 +59,7 @@ main {
     width: 100%;
     padding: 0rem 2rem;
     max-width: 82rem;
+    color: var(--color-jet-black);
 }
 
 .anime-card {
@@ -54,6 +72,16 @@ main {
     overflow: hidden;
     /* show cursor */
     cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.5s ease;
+    /* background */
+    background-color: white;
+}
+
+.anime-card:hover {
+    transform: scale(1.03);
+        box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2),
+        0 0 25px rgba(255, 255, 255, 0.3);
 }
 
 .anime-card img {
@@ -92,5 +120,6 @@ footer {
     justify-content: space-around;
     text-align: center;
     max-width: 80rem;
-    height: 8rem;
+    height: 10rem;
+    color: var(--color-stone-brown);
 }
