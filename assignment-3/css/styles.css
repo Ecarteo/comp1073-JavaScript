@@ -1,14 +1,22 @@
+/* PAGE BEHAVIOUR */
+
+html, body, h1, h2, h3, h4, p, ul { margin: 0;}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Noto Sans Display", sans-serif;
+    font-size: 1.2rem;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     padding: 1rem;
+    width: 100%;
 }
 
 .anime-card {
@@ -29,11 +37,13 @@ main {
 .anime-card h4, 
 .anime-card p {
     margin: 0;
+    padding: 0;
 }
 
 footer {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
     border-top: 1px solid #ccc;
 }
