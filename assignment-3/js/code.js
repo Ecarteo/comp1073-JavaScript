@@ -74,17 +74,28 @@ function createGridElements(animeList) {
 
         // click event to open dialog with additional API properties
         animeCard.addEventListener('click', () => {
-            const synopsis = anime.synopsis || 'No synopsis available.';
             const score = anime.score || 'N/A';
             const episodes = anime.episodes || 'Unknown';
             const genres = anime.genres.map(g => g.name).join(', ') || 'N/A';
+            const rating = anime.rating || 'N/A';
+            const source = anime.source || 'N/A';
+            const duration = anime.duration || 'N/A';
+            const aired = anime.aired.string || 'N/A';
 
             modalContent.innerHTML = `
-                <h2>${titleEnglish} (${titleJapanese})</h2>
-                <p><strong>Score:</strong> ${score} / 10</p>
-                <p><strong>Episodes:</strong> ${episodes}</p>
-                <p><strong>Genres:</strong> ${genres}</p>
-                <p><strong>Synopsis:</strong> ${synopsis}</p>
+                <div class="modal-layout">
+                    <div class="modal-details">
+                        <h2>${titleEnglish}<br>(${titleJapanese})</h2>
+                        <p><strong>Score:</strong> ${score} / 10</p>
+                        <p><strong>Episodes:</strong> ${episodes}</p>
+                        <p><strong>Genres:</strong> ${genres}</p>
+                        <p><strong>Rating:</strong> ${rating}</p>
+                        <p><strong>Source:</strong> ${source}</p>
+                        <p><strong>Duration:</strong> ${duration}</p>
+                        <p><strong>Aired:</strong> ${aired}</p>
+                    </div>
+                    <img class="modal-thumbnail" src="${imageUrl}" alt="${titleEnglish}">
+                </div>
             `;
 
             modal.showModal(); // native browser method to display dialog

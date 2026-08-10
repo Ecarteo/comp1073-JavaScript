@@ -95,7 +95,7 @@ main {
 
 .anime-card img {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Keeps the vertical aspect ratio locked */
+    aspect-ratio: 17 / 24; /* Keeps the vertical aspect ratio locked */
     object-fit: cover;
 }
 
@@ -109,17 +109,37 @@ main {
 /* DIALOG / MODAL */
 dialog {
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     padding: 2rem;
-    max-width: 500px;
-    width: 90%;
+    width: 65rem;  /* Fixed width */
+    height: 42rem; /* Fixed height */
+    /* max-width: 500px; */
     box-sizing: border-box;
 }
 
-/* Darkens background when modal opens */
+/* page background properties */
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* modal layout */
+.modal-layout {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.modal-thumbnail {
+    width: 380px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* FOOTER */
