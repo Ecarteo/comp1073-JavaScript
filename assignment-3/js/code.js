@@ -34,9 +34,13 @@ function createGridElements(animeList) {
         return true;
     });
 
-    // create grid elements in the HTML
+    // create list wrapper
+    const animeListUl = document.createElement('ul');
+    animeListUl.classList.add('anime-list');
+
+    // create list items in the HTML
     uniqueAnimeList.forEach(anime => {
-        const animeCard = document.createElement('div');
+        const animeCard = document.createElement('li');
         animeCard.classList.add('anime-card');
 
         // properties
@@ -52,8 +56,10 @@ function createGridElements(animeList) {
             <p><strong>Studio:</strong> ${studio}</p>
         `;
 
-        gridContainer.appendChild(animeCard);
+        animeListUl.appendChild(animeCard);
     });
+
+    gridContainer.appendChild(animeListUl);
 }
 
 getSeasonalAnime();
