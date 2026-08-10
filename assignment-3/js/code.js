@@ -51,8 +51,8 @@ function createGridElements(animeList) {
 
         animeCard.innerHTML = `
             <img src="${imageUrl}" alt="${titleEnglish}">
-            <h3>${titleJapanese}</h3>
-            <h4>${titleEnglish}</h4>
+            <h2>${titleJapanese}</h2>
+            <h3>${titleEnglish}</h3>
             <p><strong>Studio:</strong> ${studio}</p>
         `;
 
